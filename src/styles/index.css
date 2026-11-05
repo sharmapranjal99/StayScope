@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   Official Airbnb brand palette — the single source for every colour
+   ------------------------------------------------------------------ */
+:root {
+  --airbnb-coral: #FF5A5F;
+  --airbnb-teal: #00A699;
+  --airbnb-orange: #FC642D;
+  --airbnb-dark: #484848;
+  --airbnb-gray: #767676;
+  --airbnb-white: #FFFFFF;
+
+  /* chart roles (same mapping as the Airbnb-themed notebook) */
+  --chart-grid: rgba(118, 118, 118, 0.18);   /* medium gray, light */
+  --chart-axis: rgba(118, 118, 118, 0.45);
+  --chart-tick: var(--airbnb-gray);
+  color-scheme: light;
+}
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  /* text */
+  --color-ink: var(--airbnb-dark);
+  --color-ink-2: var(--airbnb-dark);
+  --color-muted: var(--airbnb-gray);
+
+  /* surfaces & hairlines — neutral tints of the brand grays */
+  --color-surface: var(--airbnb-white);
+  --color-plane: #F7F7F7;
+  --color-line: #EBEBEB;
+  --color-line-2: #DDDDDD;
+
+  /* brand accents */
+  --color-coral: var(--airbnb-coral);
+  --color-coral-soft: #FFF1F1;
+  --color-teal: var(--airbnb-teal);
+  --color-teal-soft: #E8F7F5;
+  --color-orange: var(--airbnb-orange);
+  --color-orange-soft: #FFF3EE;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  background: var(--airbnb-white);
+  color: var(--airbnb-dark);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection { background: rgba(255, 90, 95, 0.18); }
+
+.tabular { font-variant-numeric: tabular-nums; }
+
+code.inline {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--color-plane);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 0.05em 0.35em;
+  color: var(--airbnb-dark);
+  white-space: nowrap;
+}
+
+/* Recharts defaults */
+.recharts-cartesian-axis-tick-value { font-size: 12px; fill: var(--chart-tick); }
+.recharts-label { fill: var(--airbnb-dark); font-size: 12.5px; font-weight: 500; }
+.recharts-surface:focus, .recharts-wrapper:focus, .recharts-sector:focus { outline: none; }
+
+/* thin scrollbars for wide tables */
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--airbnb-coral);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
